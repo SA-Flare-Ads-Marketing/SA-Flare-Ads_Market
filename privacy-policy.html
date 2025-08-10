@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - SA Flare</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Privacy Policy Specific Styles */
+        .privacy-content {
+            background: var(--dark-blue);
+            color: var(--text-primary);
+            padding: 80px 0;
+        }
+
+        .privacy-wrapper {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .privacy-section {
+            background: var(--glass-bg);
+            padding: 2.5rem;
+            border-radius: 20px;
+            backdrop-filter: blur(15px);
+            border: 1px solid var(--glass-border);
+            box-shadow: var(--glass-shadow);
+            margin-bottom: 2rem;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .privacy-section::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--gradient-neon);
+        }
+
+        .privacy-section:nth-child(2n)::before {
+            background: var(--gradient-blue-purple);
+        }
+
+        .privacy-section:nth-child(3n)::before {
+            background: var(--gradient-purple-pink);
+        }
+
+        .privacy-section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(255, 60, 172, 0.2);
+        }
+
+        .section-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--gradient-neon);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 8px 20px rgba(255, 60, 172, 0.4);
+            transition: all 0.3s ease;
+        }
+
+        .privacy-section:nth-child(2n) .section-icon {
+            background: var(--gradient-blue-purple);
+            box-shadow: 0 8px 20px rgba(43, 134, 197, 0.4);
+        }
+
+        .privacy-section:nth-child(3n) .section-icon {
+            background: var(--gradient-purple-pink);
+            box-shadow: 0 8px 20px rgba(120, 75, 160, 0.4);
+        }
+
+        .privacy-section:hover .section-icon {
+            transform: scale(1.1) rotate(360deg);
+        }
+
+        .privacy-section h2 {
+            background: var(--gradient-neon);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .privacy-section:nth-child(2n) h2 {
+            background: var(--gradient-blue-purple);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .privacy-section:nth-child(3n) h2 {
+            background: var(--gradient-purple-pink);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .privacy-section p {
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        .privacy-section a {
+            background: var(--gradient-electric);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .privacy-section a:hover {
+            filter: drop-shadow(0 0 8px rgba(43, 134, 197, 0.6));
+        }
+
+        .privacy-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .privacy-list li {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+            padding: 0.5rem 0;
+        }
+
+        .privacy-list li i {
+            background: var(--gradient-electric);
+            color: white;
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+            flex-shrink: 0;
+        }
+
+        .highlight-box {
+            background: var(--gradient-neon);
+            padding: 1.5rem;
+            border-radius: 15px;
+            color: white;
+            margin: 1rem 0;
+            box-shadow: 0 10px 25px rgba(255, 60, 172, 0.3);
+        }
+
+        .highlight-box p {
+            color: white;
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-highlight {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            background: var(--glass-bg);
+            padding: 1rem 1.5rem;
+            border-radius: 15px;
+            margin: 1rem 0;
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--glass-border);
+            transition: all 0.3s ease;
+        }
+
+        .contact-highlight:hover {
+            transform: translateX(10px);
+            box-shadow: 0 10px 25px rgba(255, 60, 172, 0.2);
+        }
+
+        .contact-highlight i {
+            background: var(--gradient-purple-pink);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+        }
+
+        .contact-info-privacy {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .contact-item-privacy {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            background: var(--glass-bg);
+            padding: 1rem 1.5rem;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--glass-border);
+            transition: all 0.3s ease;
+        }
+
+        .contact-item-privacy:hover {
+            transform: translateX(10px);
+            box-shadow: 0 10px 25px rgba(255, 60, 172, 0.2);
+        }
+
+        .contact-item-privacy i {
+            background: var(--gradient-electric);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+        }
+
+        .contact-item-privacy a {
+            background: var(--gradient-neon);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .privacy-footer-note {
+            background: var(--glass-bg);
+            padding: 2rem;
+            border-radius: 15px;
+            backdrop-filter: blur(15px);
+            border: 1px solid var(--glass-border);
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+        .privacy-footer-note p {
+            color: var(--text-secondary);
+            margin-bottom: 0.5rem;
+        }
+
+        .privacy-footer-note strong {
+            background: var(--gradient-electric);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .privacy-section {
+                padding: 2rem;
+            }
+
+            .contact-info-privacy {
+                gap: 0.5rem;
+            }
+
+            .contact-item-privacy {
+                padding: 1rem;
+            }
+
+            .section-icon {
+                width: 50px;
+                height: 50px;
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+     Navigation 
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2>SA FLARE</h2>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="services.html" class="nav-link">Services</a></li>
+                <li><a href="order.html" class="nav-link">Order</a></li>
+                <li><a href="testimonials.html" class="nav-link">Testimonials</a></li>
+            </ul>
+            <div class="nav-right">
+                <div class="social-icons">
+                    <a href="https://web.facebook.com/profile.php?id=61578832953435" target="_blank" rel="noopener">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="https://www.instagram.com/saflareadsmarketing/" target="_blank" rel="noopener">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/sa-flare-ads-marketing-418862377/" target="_blank" rel="noopener">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="https://www.youtube.com/@SAFlareAdsMarketing" target="_blank" rel="noopener">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                    <a href="https://vm.tiktok.com/ZSSkMBK7F/" target="_blank" rel="noopener">
+                        <i class="fab fa-tiktok"></i>
+                    </a>
+                </div>
+                <a href="order.html" class="btn-primary">Order Now</a>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+     Page Hero 
+    <section class="page-hero">
+        <div class="container">
+            <h1>Privacy Policy</h1>
+            <p>Your privacy and data protection are our top priorities</p>
+        </div>
+    </section>
+
+     Privacy Policy Content 
+    <section class="privacy-content">
+        <div class="container">
+            <div class="privacy-wrapper">
+                <div class="privacy-section">
+                    <div class="section-icon">
+                        <i class="fas fa-info-circle"></i>
+                    </div>
+                    <h2>1. Introduction</h2>
+                    <p>Welcome to SA Flare Ads Marketing. This Privacy Policy explains how we collect, use, and protect your personal information when you visit our website <a href="https://sa-flare-ads-marketing.github.io/SA-Flare-Ads/" target="_blank" rel="noopener">https://sa-flare-ads-marketing.github.io/SA-Flare-Ads/</a> or use our services.</p>
+                </div>
+
+                <div class="privacy-section">
+                    <div class="section-icon">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <h2>2. Information We Collect</h2>
+                    <p>We may collect the following information when you place an order or interact with us:</p>
+                    <ul class="privacy-list">
+                        <li><i class="fas fa-check"></i> Name and contact details (email, phone number, etc.)</li>
+                        <li><i class="fas fa-check"></i> Order details and business information for advertising purposes</li>
+                        <li><i class="fas fa-check"></i> Information collected through Facebook Pixel for analytics and marketing</li>
+                    </ul>
+                </div>
+
+                <div class="privacy-section">
+                    <div class="section-icon">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <h2>3. How We Use Your Information</h2>
+                    <p>We use the collected information to:</p>
+                    <ul class="privacy-list">
+                        <li><i class="fas fa-arrow-right"></i> Process and manage your orders</li>
+                        <li><i class="fas fa-arrow-right"></i> Provide advertising services to grow your brand</li>
+                        <li><i class="fas fa-arrow-right"></i> Communicate with you about your order or inquiries</li>
+                        <li><i class="fas fa-arrow-right"></i> Improve our services and website experience</li>
+                    </ul>
+                </div>
+
+                <div class="privacy-section">
+                    <div class="section-icon">
+                        <i class="fas fa-share-alt"></i>
+                    </div>
+                    <h2>4. Data Sharing</h2>
+                    <div class="highlight-box">
+                        <p><strong>We do not sell, rent, or trade your personal information.</strong></p>
+                        <p>Your information is only used internally for order processing and advertising purposes.</p>
+                    </div>
+                </div>
+
+                <div class="privacy-section">
+                    <div class="section-icon">
+                        <i class="fas fa-cookie-bite"></i>
+                    </div>
+                    <h2>5. Cookies & Tracking</h2>
+                    <p>We use Facebook Pixel to track website activity, analyze visitor behavior, and improve ad targeting. You can disable cookies in your browser settings if you wish.</p>
+                </div>
+
+                <div class="privacy-section">
+                    <div class="section-icon">
+                        <i class="fas fa-user-shield"></i>
+                    </div>
+                    <h2>6. User Rights</h2>
+                    <p>You may request to access, correct, or delete your personal data by contacting us at:</p>
+                    <div class="contact-highlight">
+                        <i class="fas fa-envelope"></i>
+                       <a href="mailto:saflareadsmarketing138@gmail.com">CEO:saflareadsmarketing138@gmail.com</a>
+                       <br/>
+                        <a href="mailto:socialads280@gmail.com">Team:socialads280@gmail.com</a>
+                    </div>
+                </div>
+
+                <div class="privacy-section">
+                    <div class="section-icon">
+                        <i class="fas fa-lock"></i>
+                    </div>
+                    <h2>7. Data Security</h2>
+                    <p>We take reasonable steps to protect the personal information you provide from unauthorized access, disclosure, or misuse. Your data is stored securely and handled with the utmost care.</p>
+                </div>
+
+                <div class="privacy-section">
+                    <div class="section-icon">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <h2>8. Contact Us</h2>
+                    <p>If you have any questions about this Privacy Policy, please contact:</p>
+                    <div class="contact-info-privacy">
+                        <div class="contact-item-privacy">
+                            <i class="fas fa-envelope"></i>
+                            <a href="mailto:saflareadsmarketing138@gmail.com">CEO:saflareadsmarketing138@gmail.com</a>
+                            <a href="mailto:socialads280@gmail.com">Team:socialads280@gmail.com</a>
+                        </div>
+                        <div class="contact-item-privacy">
+                            <i class="fab fa-whatsapp"></i>
+                            <a href="https://wa.me/923044444138">CEO:+92 3044444138</a>
+                            <a href="https://wa.me/923166630048">Team:+92 3166630048</a>
+
+                        </div>
+                        <div class="contact-item-privacy">
+                            <i class="fas fa-phone"></i>
+                            <a href="tel:+923044444138">CEO:+92 3044444138</a>
+                            <a href="https://wa.me/923166630048">Team:+92 3166630048</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="privacy-footer-note">
+                    <p><strong>Last Updated:</strong> January 2025</p>
+                    <p>This Privacy Policy may be updated from time to time. We will notify you of any significant changes by posting the new Privacy Policy on this page.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+     Footer 
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>SA Flare</h3>
+                    <p>Elevating brands with powerful ads since day one.</p>
+                    <div class="social-links">
+                        <a href="https://web.facebook.com/profile.php?id=61578832953435" target="_blank" rel="noopener">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://www.instagram.com/saflareadsmarketing/" target="_blank" rel="noopener">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/sa-flare-ads-marketing-418862377/" target="_blank" rel="noopener">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://www.youtube.com/@SAFlareAdsMarketing" target="_blank" rel="noopener">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                        <a href="https://vm.tiktok.com/ZSSkMBK7F/" target="_blank" rel="noopener">
+                            <i class="fab fa-tiktok"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="order.html">Order</a></li>
+                        <li><a href="testimonials.html">Testimonials</a></li>
+                        <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <p><i class="fas fa-phone"></i> <a href="tel:+923044444138">+92 3044444138</a></p>
+                    <p><i class="fas fa-envelope"></i> <a href="mailto:saflareadsmarketing138@gmail.com">saflareadsmarketing138@gmail.com</a></p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 SA Flare. All rights reserved. | Founded by M. Saad Ali</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+
+</body>
+</html>
